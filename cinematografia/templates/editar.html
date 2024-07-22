@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+
+
+
+{% block h1_header %}
+Editar Reseña
+{% endblock h1_header %}
+
+{% block content %}
+<div class="container mt-5" style='background-color: #21304a;border: 1px solid #dee2e6;border-radius: 15px;box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);'>
+    <div class="row justify-content-center">
+        <div class="col-md-6 col-11">
+<form method="post" enctype = 'multipart/form-data' class=' p-4 rounded'>
+    {% csrf_token %}
+    {{form.as_p}}
+
+    <button class='btn btn-outline-primary' type='submit' style=' border-radius: 20px;background-color: #4263cf;color: white;border: none;'> Subir </button>
+    
+     
+</form>
+
+</div>
+</div>
+</div>
+
+
+{% endblock content %}

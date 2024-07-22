@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+
+
+
+{% block h1_header %}
+Eliminar reseña
+{% endblock h1_header %}
+
+{% block content %}
+
+
+<h3>Estas segura que desas eliminar la reseña??? </h3>
+
+
+<form method='post'> 
+    {% csrf_token %}
+    <button type='submit'> Si </button> 
+<a href={% url "prueba" %}> No </a>
+
+</form>
+
+
+{% endblock content %}
+
+
+
+
+

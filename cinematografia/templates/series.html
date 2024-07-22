@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+
+
+
+{% block h1_header %}
+<a style='color: #4263cf;font-weight: bold;text-decoration: none;border: 1px solid #4263cf;padding: 5px 20px;border-radius: 5px;display: inline-block;transition: background-color 0.3s, color 0.3s;'href={% url "agregar_series" %}>Agregar review</a>
+{% endblock h1_header %}
+
+{% block content %}
+
+{%for object in object_list%}
+  <div class='row d-flex justify-content-center' style='border:5px solid #6a3d7d; border-radius:40px;'>
+    <div class='col-md-6 col-12 mx-auto mt-5 mb-5' style="text-align: center;">
+
+<h3> {{object.titulo}} </h3>
+<h4> {{object.subtitulo}} </h4>
+{% if object.img %}
+<img src="{{object.img.url}}" height='500px' alt="">
+{% endif %}
+<p>{{object.fecha}}</p>
+<p>{{object.usuario}}</p>
+<p>{{object.director}}</p>
+<p>{{object.genero}}</p>
+<p>{{object.temporadas}}</p>
+<p>{{object.cuerpo}}</p>
+
+
+
+{% if request.user.username == object.usuario.username %}
+
+<a href={% url "eliminar_serie" object.pk %}> Eliminar reseña </a>
+
+<a href={% url "editar_serie" object.pk %}> Editar reseña </a>
+
+
+{% endif %}
+
+
+
+
+    </div>
+</div>
+{%endfor%}
+
+
+
+{% endblock content %}

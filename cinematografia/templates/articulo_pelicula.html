@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+
+
+
+{% block h1_header %}
+
+{% endblock h1_header %}
+
+{% block content %}
+<div class='row d-flex justify-content-center' style='border:5px solid #802920; border-radius:40px;'>
+    <div class='col-md-6 col-12 mx-auto mt-5 mb-5' style="text-align: center;">
+
+<h3> {{pelicula.titulo}} </h3>
+<h4> {{pelicula.subtitulo}} </h4>
+{% if pelicula.img %}
+<img src="{{pelicula.img.url}}" alt="">
+{% endif %}
+<p>{{pelicula.fecha}}</p>
+<p>{{pelicula.usuario}}</p>
+<p>{{pelicula.director}}</p>
+<p>{{pelicula.genero}}</p>
+<p>{{pelicula.cuerpo}}</p>
+
+
+</div>
+</div>
+
+
+
+
+
+{% endblock content %}
+
+
+

@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block main %}
+
+
+{% block h1_header %}
+Agregue su review
+{% endblock h1_header %}
+
+
+{% block content %}
+
+<form method="post" enctype="multipart/form-data"> 
+ {% csrf_token %}
+ {{formulario.as_p}}
+ <button type='submit'>Enviar</button>     
+</form>
+
+{% endblock content %}
+
+{% endblock main %}

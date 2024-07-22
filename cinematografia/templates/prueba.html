@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+
+
+{% block content %}
+<h1 class='fw-bolder'>  Listado de Películas y Series</h1>
+<div class='row'>
+<ul>
+    {% for item in page_obj %}
+      <div class='row d-flex justify-content-center' style='border:2px solid #4263cf; border-radius:40px;'>
+    <div class='col-md-6 col-12 mx-auto mt-5 mb-5' style="text-align: center;">
+        <li>
+            <h2>{{ item.titulo }}</h2>
+            <h3>{{ item.subtitulo }}</h3>
+            <img src="{{ item.img.url }}" alt="{{ item.titulo }}" width=300px>
+            <p>{{ item.cuerpo|truncatewords:50 }}</p>
+            <p>Usuario: {{ item.usuario.username }}</p>
+            <p>Fecha: {{ item.fecha }}</p>
+            {% if item.is_pelicula %}
+                <a href="{% url 'detalle_pelicula' item.pk %}">Leer más</a>
+            {% else %}
+                <a href="{% url 'detalle_serie' item.pk %}">Leer más</a>
+            {% endif %}
+
+        </li>
+    </div>    
+    </div>
+    {% endfor %}
+        
+</ul>
+</div>
+<div>
+    <span class="step-links">
+        {% if page_obj.has_previous %}
+            <a href="?page=1">&laquo; first</a>
+            <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+        </span>
+
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}">next</a>
+            <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+        {% endif %}
+    </span>
+</div>
+{% endblock content %}

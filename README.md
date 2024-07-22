@@ -1,0 +1,4 @@
+Para esta proyecto decidi crear una pagina basada en reseñas de peliculas y series, en la cual en su inicio cuenta con publicaciones de usuarios ya registrados que se pueden leer, para poder publicar tu propia reseña deberas registrarte y luego loguearte. Los usuaarios cuentan con su propio perfil desde el cual pueden editar o eliminar sus propias reseñas, tanto de series como de peliculas.
+La pagina cuenta con un boton de inicio que te redirecciona a este mismo donde se muestra un vistazo de todas las reseñas publicadas, y al hacer click en "leer mas" accedes a la reseña completa.
+Tambien cuenta con un boton para ver exclusivamente las reseñas d peliculas y otro boton para las reseñas de series, desde los cuales si estas registrados podras hacer tus publicaciones. Tambien cuenta con un boton para registrarse, uno para logearse y otro para cerrar la sesion.
+ 

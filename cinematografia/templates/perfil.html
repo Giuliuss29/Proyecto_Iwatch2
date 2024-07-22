@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1> Tu Perfil </h1>
+
+
+<p>Usuario: {{user.username}}</p>
+<p>Correo: {{user.email}}</p>
+Titulos de tus reviews
+<ul>
+    {% for peliculas in user.peliculas_set.all %}
+    <li>{{peliculas.titulo}}</li>
+    
+    
+    {% endfor %}
+</ul>
+
+
+
+
+
+
+
+
+
+{% endblock content %}
+
+
+
+
+
+
+
+
+
+
+
+
+

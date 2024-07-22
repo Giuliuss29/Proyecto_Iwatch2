@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+
+
+
+{% block h1_header %}
+
+{% endblock h1_header %}
+
+{% block content %}
+
+<div class='row d-flex justify-content-center' style='border:5px solid #802920; border-radius:40px;'>
+    <div class='col-md-6 col-12 mx-auto mt-5 mb-5' style="text-align: center;">
+
+
+<h3> {{serie.titulo}} </h3>
+<h4> {{serie.subtitulo}} </h4>
+{% if serie.img %}
+<img src="{{serie.img.url}}" alt="">
+{% endif %}
+<p>{{serie.fecha}}</p>
+<p>{{serie.usuario}}</p>
+<p>{{serie.director}}</p>
+<p>{{serie.genero}}</p>
+<p>{{serie.cuerpo}}</p>
+
+
+</div>
+</div>
+
+
+
+
+
+{% endblock content %}
